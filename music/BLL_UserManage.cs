@@ -62,14 +62,14 @@ namespace music
             
             for (int i = 0; i < dt_singer.Rows.Count; i++)
             {
-                JSONString += "\"[歌手]";
+                JSONString += "\"";
                 JSONString += dt_singer.Rows[i][0];
                 JSONString += "\",";
             }
             
             for (int i = 0; i < dt_song.Rows.Count; i++)
             {
-                JSONString += "\"[歌曲]";
+                JSONString += "\"";
                 JSONString += dt_song.Rows[i][0];
                 JSONString += "\",";
             }
