@@ -114,12 +114,15 @@ namespace music
         
         //歌曲热度添加
         //添加之前判断是否存在
-        public bool addSongHits(Model_Song song)
+        public bool addSongHits(string keyword)
         {
-            string songname = song.SongName;
-            bool ret = isSongExist(songname);
+            bool ret = isSongExist(keyword);
             if (ret == true)
             {
+                Model_Song song = new Model_Song();
+                song.SongName = keyword;
+                //热度添加时间
+                song.HitTime = DateTime.Now;
                 DAL_UserManage UserMgr =new DAL_UserManage();
                 return UserMgr.songAddHits(song);
             }
@@ -128,12 +131,14 @@ namespace music
         }
         //歌手热度添加
         //添加之前判断是否存在
-        public bool addSingerHits(Model_Singer singer)
+        public bool addSingerHits(string keyword)
         {
-            string singername = singer.SingerName;
-            bool ret = isSingerExist(singername);
+            bool ret = isSingerExist(keyword);
             if (ret == true)
             {
+                Model_Singer singer = new Model_Singer();
+                singer.SingerName = keyword;
+                singer.HitTime = DateTime.Now;
                 DAL_UserManage UserMgr = new DAL_UserManage();
                 return UserMgr.singerAddHits(singer);
             }
