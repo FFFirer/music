@@ -29,7 +29,7 @@ namespace music
             {
                 //封装Model_User
                 Model_User user = new Model_User();
-                user.UserName = SessionContorl.GetSessionString("userName");
+                user.ID = SessionContorl.GetSessionNumber("userID");
                 user.Password = newPWD;
 
                 BLL_UserManage userMgr = new BLL_UserManage();

@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div>
+    <form runat="server">
     <table style="width: 100%;">
         <tr>
             <td>
@@ -47,6 +48,7 @@
             </td>
         </tr>
     </table>
+    </form>
 </div>
 
 </asp:Content>
