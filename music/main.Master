@@ -18,11 +18,10 @@
         $(document).ready(function () {
             var state = '<%=Session["userName"] %>';
             if (state == "") {
-                alert("请登陆");
+                $("#link").html("登陆|注册");
             }
             else {
-                $("#link").attr("href", "#");
-                $("#link").html(state+"欢迎你");
+                $("#link").html(state);
             }
         });
     </script>

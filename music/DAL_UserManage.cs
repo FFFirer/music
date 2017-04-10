@@ -105,10 +105,10 @@ namespace music
         /// <returns></returns>
         public bool userChangePassword(Model_User user)
         {
-            string updateString = "update [dbo].[user] set [password]=@password where [userID]=@userID";
+            string updateString = "update [dbo].[user] set [password]=@password where [userName]=@userName";
             SqlParameter[] parameters = new SqlParameter[] { 
                 new SqlParameter("@password",user.Password),
-                new SqlParameter("@userID",user.ID),
+                new SqlParameter("@userName",user.UserName),
             };
             int ret = sqlHelper.ExecuteSql(updateString,parameters);
             if(ret==1)
